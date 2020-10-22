@@ -24,7 +24,7 @@ class Introduce extends Component {
           </Text>
           .
         </Paragraph>
-        <Title level={2}>Guidelines and Resources</Title>
+        <Title level={2}>JJ Lin 14th Album</Title>
 
         <Paragraph>
           We supply a series of design principles, practical patterns and high
@@ -35,13 +35,13 @@ class Introduce extends Component {
         <Paragraph>
           <ul>
             <li>
-              <Link href="/docs/spec/proximity">Principles</Link>
+              <Link href="https://www.youtube.com/watch?v=hVnbXhQVY2k">Embark</Link>
             </li>
             <li>
-              <Link href="/docs/pattern/navigation">Patterns</Link>
+              <Link href="https://youtu.be/HARhtTMmdtc">Passing Through</Link>
             </li>
             <li>
-              <Link href="/docs/resource/download">Resource Download</Link>
+              <Link href="https://youtu.be/8HN9xEd6dzE">So Be It</Link>
             </li>
           </ul>
         </Paragraph>
