@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Typography, Divider } from "antd";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import {Button, Icon, Typo} from './pages';
-const { Title, Paragraph, Text } = Typography;
+import {Buttons, Icon, Typo} from './pages';
+const { Paragraph, Text } = Typography;
 
 class Introduce extends Component {
   render() {
@@ -26,7 +26,7 @@ class Introduce extends Component {
                   </li>
                 </ul>
               </nav>
-              <Route exact path="/button" component={Button} />
+              <Route exact path="/button" component={Buttons} />
               <Route exact path="/icon" component={Icon} />
               <Route exact path="/typo" component={Typo} />
             </div>

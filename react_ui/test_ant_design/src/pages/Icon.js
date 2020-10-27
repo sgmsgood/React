@@ -3,7 +3,7 @@ import React from 'react';
 const Icon = () => {
     return(
         <div>
-            <h2>User Page</h2>
+            <h2>준비 중...</h2>
         </div>
     )
 }
