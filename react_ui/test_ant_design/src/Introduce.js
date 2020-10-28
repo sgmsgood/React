@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Typography, Divider } from "antd";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import {Buttons, Icon, Typo} from './pages';
-const { Paragraph, Text } = Typography;
+import {Buttons, Icons, Typo} from './pages';
+const { Paragraph, Title } = Typography;
 
 class Introduce extends Component {
   render() {
@@ -14,11 +14,11 @@ class Introduce extends Component {
               <nav>
                 <ul>
                   <li>
-                    <Link to="/button">Button</Link>
+                    <Link to="/button">Buttons</Link>
                   </li>
                   <li>
                     <Link to="/icon">
-                      Icon
+                      Icons
                     </Link>
                   </li>
                   <li>
@@ -27,17 +27,14 @@ class Introduce extends Component {
                 </ul>
               </nav>
               <Route exact path="/button" component={Buttons} />
-              <Route exact path="/icon" component={Icon} />
+              <Route exact path="/icon" component={Icons} />
               <Route exact path="/typo" component={Typo} />
             </div>
           </Router>
         </Paragraph>
-
-        <Paragraph>
-          Press <Text keyboard>Esc</Text> to exit...
-        </Paragraph>
-
-        <Divider />
+        <Divider orientation="center">
+          <Title>The End</Title>
+          </Divider>
       </Typography>
     );
   }
