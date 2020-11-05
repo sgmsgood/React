@@ -1,15 +1,108 @@
 import React, { Component } from "react";
-import { Button, Tooltip } from "antd";
-import { SearchOutlined } from '@ant-design/icons';
-import { PoweroffOutlined } from '@ant-design/icons';
+import { Button, Tooltip, Space } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
+import { PoweroffOutlined, InstagramOutlined, QuestionCircleOutlined, BellOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 
 class Buttons extends Component {
+  handleButtonEvent = (e) => {
+    this.setState((state) => {
+      console.log("So It Be");
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <h3>1. Button</h3>
+        <DefaultButton></DefaultButton>
+        <br/>
+        <h3>2. Tooltip</h3>
+        <TooltipButton></TooltipButton>
+        <br/> 
+        <h3>3. Loading</h3>
+        <LoadingButton></LoadingButton>
+      </>
+    );
+  }
+}
+
+class DefaultButton extends Component {
+  render() {
+    return (
+      <Space>
+        <Button
+          type="primary"
+          style={{
+            color: "#f7f81a",
+            backgroundColor: "#d7a5ca",
+            borderColor: "transparent",
+          }}
+          onClick={this.handleButtonEvent}
+        >
+          <InstagramOutlined />
+          So It Be
+        </Button>
+        <Button shape="round" size="small">round Button</Button>
+        <Button type="dashed" size="large">Dashed Button</Button>
+        <Button type="text">Text Button</Button>
+        <Button type="link">Link Button</Button>
+        <Tooltip title="Goast Button" color="#6ca7ae" >
+          <Button ghost>Link Button</Button>
+        </Tooltip>
+        <Button type="primary" shape="circle">
+            A
+        </Button>
+
+        <Button disabled="false">non clickable</Button>
+        <Button disabled="false" loading>non clickable Loding</Button>
+        <Button disabled="false" loading={10}>non clickable Loding</Button>
+      </Space>
+    );
+  }
+}
+
+class TooltipButton extends Component {
+  render() {
+    return (
+      <>
+        <Tooltip title="search">
+          <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+        </Tooltip>
+        <Tooltip title="RoundButton 예뻐요!" color="#6ca7ae" >
+        <Button type="primary" shape="Round Button">
+          A
+        </Button>
+        </Tooltip>
+        <Button type="primary" icon={<SearchOutlined />}>
+          Search
+        </Button>
+        <Tooltip title="search">
+          <Button shape="circle" icon={<SearchOutlined />} />
+        </Tooltip>
+        <Button icon={<SearchOutlined />}>Search</Button>
+        <br />
+        <Tooltip title="search">
+          <Button shape="circle" icon={<SearchOutlined />} />
+        </Tooltip>
+        <Button icon={<SearchOutlined />}>Search</Button>
+        <Tooltip title="search">
+          <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
+        </Tooltip>
+        <Button type="dashed" icon={<SearchOutlined />}>
+          Search
+        </Button>
+      </>
+    );
+  }
+}
+
+class LoadingButton extends Component {
   state = {
     loadings: [],
   };
 
-  enterLoading = index => {
+  enterLoading = (index) => {
     this.setState(({ loadings }) => {
       const newLoadings = [...loadings];
       newLoadings[index] = true;
@@ -18,6 +111,7 @@ class Buttons extends Component {
         loadings: newLoadings,
       };
     });
+
     setTimeout(() => {
       this.setState(({ loadings }) => {
         const newLoadings = [...loadings];
@@ -29,80 +123,48 @@ class Buttons extends Component {
       });
     }, 6000);
   };
-
   render() {
     const { loadings } = this.state;
+
     return (
       <>
-      <h3>1. Button</h3>
-        <Button type="primary">Primary Button</Button>
-        &nbsp; &nbsp;
-        <Button>Default Button</Button>
-        &nbsp; &nbsp;
-        <Button type="dashed">Dashed Button</Button>
-        <br />
-        <Button type="text">Text Button</Button>
-        <Button type="link">Link Button</Button>
-      <br/>
-      <br/>
-      <h3>2. Tooltip</h3>
-      <Tooltip title="search">
-        <Button type="primary" shape="circle" icon={<SearchOutlined />} />
-      </Tooltip>
-      <Button type="primary" shape="circle">
-        A
-      </Button>
-      <Button type="primary" icon={<SearchOutlined />}>
-        Search
-      </Button>
-      <Tooltip title="search">
-        <Button shape="circle" icon={<SearchOutlined />} />
-      </Tooltip>
-      <Button icon={<SearchOutlined />}>Search</Button>
-      <br />
-      <Tooltip title="search">
-        <Button shape="circle" icon={<SearchOutlined />} />
-      </Tooltip>
-      <Button icon={<SearchOutlined />}>Search</Button>
-      <Tooltip title="search">
-        <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
-      </Tooltip>
-      <Button type="dashed" icon={<SearchOutlined />}>
-        Search
-      </Button>
-      <br/>
-      <br/>
-      <h3>3. Loading</h3>
-      <Button type="primary" loading>
-          Loading
-        </Button>
-        &nbsp; &nbsp;
-        <Button type="primary" size="small" loading>
-          Loading
-        </Button>
-        &nbsp; &nbsp;
-        <Button type="primary" icon={<PoweroffOutlined />} loading />
-        <br />
-        <Button type="primary" loading={loadings[0]} onClick={() => this.enterLoading(0)}>
-          Click me!
-        </Button>
-        &nbsp; &nbsp;
+        <Space>
+          <Button type="primary" loading>
+            Loading
+          </Button>
+          <Button type="primary" size="small" loading>
+            Loading
+          </Button>
+          <Button type="primary" icon={<PoweroffOutlined />} loading />
+        </Space>
+        <br/>
+        <Space>
+          <Button
+            type="dashed"
+            loading={loadings[0]}
+            icon={<QuestionCircleOutlined />}
+            onClick={() => this.enterLoading(0)}
+          >
+            Question Box
+          </Button>
+        
         <Button
           type="primary"
           icon={<PoweroffOutlined />}
-          loading={loadings[1]}
-          onClick={() => this.enterLoading(1)}
+          loading={loadings[5]}
+          onClick={() => this.enterLoading(5)}
         >
           Click me!
         </Button>
-        &nbsp; &nbsp;
+
         <Button
           type="primary"
           icon={<PoweroffOutlined />}
           loading={loadings[2]}
           onClick={() => this.enterLoading(2)}
         />
-    </>
+        </Space>
+      </>
     );
   }
 }
