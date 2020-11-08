@@ -38,7 +38,7 @@ class BasicGrid extends Component {
                     <Col span={8}>col-8</Col>
                     <Col span={8}>col-8</Col>
                 </Row>
-                <Row>
+                <Row gutter={16}>
                     <Col span={6}>col-6</Col>
                     <Col span={6}>col-6</Col>
                     <Col span={6}>col-6</Col>
@@ -46,16 +46,16 @@ class BasicGrid extends Component {
                 </Row>
                 <Divider orientation="left">Responsive</Divider>
                 <Row gutter={{ xs: 100, sm: 20, md: 24, lg: 32 }}>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" span={6} push={5} order={2}>
                         <div style={blueStyle}>col-6</div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" span={6} order={1}>
                         <div style={blueStyle}>col-6</div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" span={6} order={3}>
                         <div style={blueStyle}>col-6</div>
                     </Col>
-                    <Col className="gutter-row" span={6}>
+                    <Col className="gutter-row" span={6} order={4}>
                         <div style={blueStyle}>col-6</div>
                     </Col>
                 </Row>    

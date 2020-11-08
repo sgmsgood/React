@@ -14,11 +14,20 @@ class Spaces extends Component {
             <br/>
             <Text type>就是我（I'm The One）</Text>
           </Card>
-          <Card title="2nd Album" style={{ width: 300 }}>
-            <p>Card content</p>
-            <p>Card content</p>
+          <Card title="2nd Album" style={{width:300}} align='center'>
+            <p>so be it</p>
+            <p>embark</p>
           </Card>
         </Space>
+      </>
+    );
+  }
+}
+
+class spaceSize extends Component {
+  render() {
+    return(
+      <>
       </>
     );
   }

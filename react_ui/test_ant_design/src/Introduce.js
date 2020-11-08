@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Typography, Divider } from "antd";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import {Buttons, Icons, Typo, Spaces, Grids} from './pages';
+import {Buttons, Icons, Typo, Spaces, Grids, LayoutClass} from './pages';
 
 const { Paragraph, Text, Title } = Typography;
 
@@ -31,6 +31,9 @@ class Introduce extends Component {
                   <li>
                     <Link to="/grid">Grids</Link>
                   </li>
+                  <li>
+                    <Link to="/layout_slider">LayoutSlider</Link>
+                  </li>
                 </ul>
               </nav>
               <Route exact path="/button" component={Buttons} />
@@ -38,6 +41,7 @@ class Introduce extends Component {
               <Route exact path="/typo" component={Typo} />
               <Route exact path="/space" component={Spaces} />
               <Route exact path="/grid" component={Grids} />
+              <Route exact path="/layout_slider" component={LayoutClass} />
             </div>
           </Router>
         </Paragraph>

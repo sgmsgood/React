@@ -81,6 +81,9 @@ class Interactive extends Component {
     }
     return(
       <>
+        <Demo>
+          <Paragraph editable={{ onChange: this.setEditableStr }}>{this.editableStr}</Paragraph>
+        </Demo>
       </>
     );
   }
