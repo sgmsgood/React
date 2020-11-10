@@ -16,3 +16,9 @@
     padding: 16px 16px;
     background: #fff;
   }
+
+  .Home-card {
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px 0px rgba(208, 216, 243, 0.8);
+    margin: 10px 10px;
+  }
