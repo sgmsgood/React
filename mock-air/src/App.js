@@ -1,6 +1,8 @@
 import './App.css';
 import React from "react";
 import { Link, Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import 'antd/dist/antd.css';
+import { Layout, Menu, Breadcrumb } from 'antd';
 
 import Home from "./Home"
 import About from "./About";
@@ -8,15 +10,18 @@ import About from "./About";
 function App() {
   return (
     <Router>
+      <Layout>
       <header>
-        <Link to="/">
-          <button>Home</button>
-        </Link>
-        <Link to="/about">
-          <button>About</button>
-        </Link>
+        <Menu theme="white" mode="horizontal" className="center-horizontal">
+          <Menu.Item key="/">
+            <Link to ="/">Home</Link>
+          </Menu.Item>
+          <Menu.Item key="/about">
+            <Link to ="/about">About</Link>
+          </Menu.Item>
+        </Menu>
       </header>
-      <hr />
+      </Layout>
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
